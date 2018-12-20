@@ -1,0 +1,44 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <check disabled="myTLInfo.checkToRun" id="myTLInfo.schemeInformation.id+'_'+myTLInfo.tag" listcheck="myTLInfo.listChecks" label="myTLInfo.label" istreeparent="true"></check>
+        <change id="myTLInfo.schemeInformation.id+'_'+myTLInfo.tag" listdiff="myTLInfo.listdiff" label="myTLInfo.label" istreeparent="true"information="information"></change>
+        <span style="display: inline-block;">{{myTLInfo.dbName}} ({{myTLInfo.schemeInformation.sequenceNumber}}) - {{myTLInfo.label}}</span>
+        <span style="float: right;" class="fa fa-check cursor-pointer" ng-click="ok()"></span>
+        <span style="float: right; margin-right: 5px;" class="fa fa-times cursor-pointer" ng-click="cancel()"></span>
+    </div>
+    <div class="panel-body">
+        <!-- Add Extension-->
+        <div style="display: inline; float: right;">
+            <span ng-click="addTable(myTabs)" class="fa fa-plus-circle dropdown-toggle cursor-pointer " tooltip-placement="bottom" tooltip="Add"
+                style="color: #337ab7;" type="button"></span>
+        </div>
+        <!-- Table -->
+        <tabset>
+            <tab ng-repeat="tab in myTabs" active="tab.isActive">
+                <tab-heading>
+                    <check disabled="myTLInfo.checkToRun" id="tab.id" listcheck="myTLInfo.listChecks" label="myTLInfo.label" istreeparent="false"></check>
+                    <change id="tab.id" listdiff="myTLInfo.listdiff" label="myTLInfo.label" istreeparent="false"information="information"></change>
+                    <span style="margin-left: 5px;">{{$index+1}}</span>
+                </tab-heading>
+                <div class="col-sm-2 text-right">
+                    <select ng-model="tab.critical" required name="tab.critical_{{tab.id}}" style="width: 70%;">
+                        <option value="true" ng-selected="tab.critical==true">true</option>
+                        <option value="false" ng-selected="tab.critical==false">false</option>
+                    </select>
+                </div>
+                <div class="col-sm-10">
+                    <input ng-model="tab.value" required name="tab.value_{{tab.id}}" style="width: 94%;" />
+                </div>
+        
+                <div class="row" align="right">
+                    <div style="display: inline;">
+                        <span th:text="#{tDelete}"></span>
+                        <span>Extension {{$index+1}}</span>
+                    </div>
+                    <span ng-confirm="{{confirm_delete | replaceIn:'%OBJ%':('Extension '+($index+1))}}"  confirmed="deleteTable(myTabs,$index)" class="fa fa-trash cursor-pointer "
+                        style="margin-right: 10px;"></span>
+                </div>
+            </tab>
+        </tabset>
+    </div>
+</div>

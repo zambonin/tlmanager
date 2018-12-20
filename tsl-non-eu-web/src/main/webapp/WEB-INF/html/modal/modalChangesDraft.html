@@ -1,0 +1,23 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <span th:text="#{tl.changes.prod.title}"></span>
+        <span class="fa fa-times cursor-pointer" ng-click="cancel()" style="margin-left: 5px; float: right"></span>
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <span th:text="#{tl.changes.information}"></span>
+        </div>
+        
+        <div class="row" ng-if="drafts==null || drafts.length<=1">
+            <span class="fa-stack cursor-pointer marginL-1">
+				<i class="fa fa-circle fa-stack-1x white" ></i>
+				<span class="fa fa-exclamation-circle fa-stack-1x errorColor"></span>
+			</span>
+            
+            <label th:text="#{tl.changes.no.drafts}"></label>
+        </div>
+        <div class="row" ng-if="drafts.length>1">
+            <paginator options="tableOptions"></paginator>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,28 @@
+<div th:fragment="header">
+    <header>
+        <div id="header_ec" class="full">
+            <div class="title">
+                <div class="content">
+                	<span th:text="#{title}"></span>
+                </div>
+            </div>
+            <div class="sub-title">
+                <div class="content">
+                    <div style="display: inline-block;"><span th:text="#{header.based}" style="margin-left: 0px;"></span></div>
+                    <div style="display: inline-block; float: right;" ng-if="authorized()">
+                    	<span class="fa fa-sign-out" style="font-size: 12px;"> </span>
+                    	<a style="font-size: 12px;" href="/tl-manager-non-eu/end-session" target="_self">{{tLogout}} ({{userInfo.ecasId}})</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="path full">
+            <div class="content">
+<!--                 <ul> -->
+<!--                     <li class="first"><a href=""><span th:text=""></span></a></li> -->
+<!--                     <li class="last"><span th:text=""></span></li> -->
+<!--                 </ul> -->
+            </div>
+        </div>
+    </header>
+</div>

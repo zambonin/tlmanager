@@ -70,7 +70,7 @@
 
 	<scm>
         <developerConnection>scm:git:https://bitbucket.org/nowina-esig/digit-tsl-non_eu.git</developerConnection>
-        <tag>tlm-non-eu-5.0</tag>
+        <tag>tsl-non-eu-5.0.3</tag>
     </scm>
 
 	<build>
@@ -84,6 +84,39 @@
 					<tag>${tag}</tag>
 				</configuration>
 			</plugin>
+			<plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>0.7.2.201409121644</version>
+                <executions>
+                    <execution>
+                        <id>prepare-unit-test-agent</id>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>generate-unit-test-report</id>
+                        <goals>
+                            <goal>merge</goal>
+                            <goal>report</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>prepare-integration-test-agent</id>
+                        <goals>
+                            <goal>prepare-agent-integration</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>generate-integration-test-report</id>
+                        <goals>
+                            <goal>merge</goal>
+                            <goal>report-integration</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-source-plugin</artifactId>

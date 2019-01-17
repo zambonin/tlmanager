@@ -29,7 +29,7 @@
                 </div>
                 <div class="row">
                     <span class="col-sm-2 text-right" th:text="#{address.locality}"></span>
-                    <input ng-model="tab.locality" ng-model="tab.locality" class="col-sm-5" name="locality_{{tab.id}}" required />
+                    <input ng-model="tab.locality" class="col-sm-5" name="locality_{{tab.id}}" required />
                     <span style="padding-right: 15px; padding-left: 15px;" th:text="#{address.postalcode}"></span>
                     <input style="width: 15.5%;" ng-model="tab.postalCode" name="postal_{{tab.id}}" required />
                     <span class="requiredIcon" tooltip="{{tRequiredInStandard}}" tooltip-placement="right" style="margin-left: -1px;">(*)</span>

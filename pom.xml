@@ -68,11 +68,6 @@
 		<module>tsl-non-eu-scheduler</module>
 	</modules>
 
-	<scm>
-        <developerConnection>scm:git:https://bitbucket.org/nowina-esig/digit-tsl-non_eu.git</developerConnection>
-        <tag>tsl-non-eu-5.0.3</tag>
-    </scm>
-
 	<build>
 		<plugins>
 			<plugin>
@@ -302,33 +297,10 @@
 
 	<repositories>
 		<repository>
-			<id>forge.nowina.lu.release</id>
-			<name>Internal repository</name>
-			<url>http://forge.nowina.local/nexus/content/repositories/releases/</url>
-		</repository>
-		<repository>
-			<id>forge.nowina.lu.snapshot</id>
-			<name>Snapshot repository</name>
-			<url>http://forge.nowina.local/nexus/content/repositories/snapshots/</url>
-		</repository>
-		<repository>
 			<id>cefdigital</id>
 			<name>cefdigital</name>
 			<url>https://ec.europa.eu/cefdigital/artifact/content/repositories/esignaturedss/</url>
 		</repository>
 	</repositories>
-	
-	<distributionManagement>
-        <repository>
-            <id>forge.nowina.lu</id>
-            <name>Internal repository</name>
-            <url>http://forge.nowina.local/nexus/content/repositories/releases/</url>
-        </repository>
-        <snapshotRepository>
-            <id>forge.nowina.lu</id>
-            <name>Internal repository</name>
-            <url>http://forge.nowina.local/nexus/content/repositories/snapshots/</url>
-        </snapshotRepository>
-    </distributionManagement>
 
 </project>

@@ -301,6 +301,11 @@
 			<name>cefdigital</name>
 			<url>https://ec.europa.eu/cefdigital/artifact/content/repositories/esignaturedss/</url>
 		</repository>
+		<repository>
+			 <id>local-repo</id>
+			 <name>local-repo</name>
+			 <url>file://${project.basedir}/local-m2</url>
+		</repository>
 	</repositories>
 
 </project>

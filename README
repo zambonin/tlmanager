@@ -1,0 +1,10 @@
+This repository hosts an internationalized version of Trusted List Manager
+non-EU v5.0 [1]. See "Trusted List Browser" on [2] for more information on this
+software and the concepts behind TLs.
+
+This version of the software can be used inside of a Docker container for ease
+of configuration and deployment. See the repository on [3] for more details.
+
+[1] https://ec.europa.eu/digital-building-blocks/wikis/display/TLSO/Trusted+List+Manager+non-EU
+[2] https://ec.europa.eu/digital-building-blocks/wikis/display/DIGITAL/eSignature+FAQ
+[3] https://github.com/zambonin/tlm-neu-docker

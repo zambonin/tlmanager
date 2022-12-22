@@ -14,7 +14,10 @@
             </div>
 
             <div style="display: inline-block; float: right;">
-                <li class="first"><a ng-click="goToTop()" th:text="#{footer.toTop}" class="service cursor-pointer"></a></li>
+                <li class="first"><a th:href="@{${'~' + #httpServletRequest.requestURI}(locale=en)}">English</a></li>
+                <li><a th:href="@{${'~' + #httpServletRequest.requestURI}(locale=es)}">Español</a></li>
+                <li><a th:href="@{${'~' + #httpServletRequest.requestURI}(locale=pt)}">Português</a></li>
+                <li><a ng-click="goToTop()" th:text="#{footer.toTop}" class="service cursor-pointer"></a></li>
             </div>
         </ul>
     </div>

@@ -44,7 +44,12 @@
 <script th:src="@{/js/checkStatus.js}"></script>
 <script th:src="@{/js/checkImpact.js}"></script>
 <script th:src="@{/script/myApp.js}"></script>
-<script th:src="@{/script/variable.js}"></script>
+<script th:inline="javascript"
+        th:src="@{/script/variable.{lang}.js(lang=${#locale.language})}"
+        type="text/javascript"
+        th:with="loadedCorrectly='true'"></script>
+<script th:unless="${loadedCorrectly} == 'true'"
+        th:src="@{/script/variable.js}"></script>
 <script th:src="@{/script/convertAsn1.js}"></script>
 <script th:src="@{/script/factory/httpFactory.js}"></script>
 <script th:src="@{/script/factory/cookieFactory.js}"></script>

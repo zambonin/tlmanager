@@ -26,7 +26,7 @@ digitTslWeb.factory('httpFactory', [ '$http','showModal','$q','appConstant', fun
 				};
 			})
 			.error(function(data, status, headers, config) {
-			    if(data.errorMessage){
+			    if(data !== null && data.errorMessage){
                     showModal.httpStatusHandler(status,data.errorMessage);
                 }else{
                     showModal.httpStatusHandler(status,errMessage);

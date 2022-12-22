@@ -99,16 +99,18 @@ digitTslWeb.controller('dataPropertiesController',['$scope','$modal','httpFactor
 			$scope.dataProperties.splice( $scope.dataProperties.indexOf(propertie), 1 );
 		});
 	};
-	
+
 	/** Filter **/
 	$scope.filterCode = function(properties){
 		$scope.propCode = [];
-		for(var i=0;i<properties.length;i++){
-			if(properties[i].codeList==$scope.filter){
-				$scope.propCode.push(properties[i]);
-			};
-		};
-		return $scope.propCode; 
+		if (properties !== undefined) {
+			for (var i = 0; i < properties.length; i++) {
+				if (properties[i].codeList === $scope.filter) {
+					$scope.propCode.push(properties[i]);
+				}
+			}
+		}
+		return $scope.propCode;
 	};
 	
 	$scope.changefilter = function(filtre){

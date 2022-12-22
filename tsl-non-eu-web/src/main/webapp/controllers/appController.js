@@ -307,6 +307,7 @@ digitTslWeb.controller('appController',['$scope','$http','$modal','$anchorScroll
 		    		// MyDraft
 		    		var endPath= $location.absUrl().split('/tl-manager-non-eu/drafts/')[1];
 					var pathDraftStoreId= endPath.split("/")[0];
+					pathDraftStoreId = pathDraftStoreId.substring(0, 36);
 					if(pathDraftStoreId==null || pathDraftStoreId==""){
 					    // access draft/
 					    if($scope.draftStoreId!=null){

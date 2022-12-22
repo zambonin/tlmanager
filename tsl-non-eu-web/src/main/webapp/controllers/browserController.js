@@ -75,6 +75,7 @@ digitTslWeb.controller('browserController', [ '$scope','$modal','$window','$loca
 													// loading page
 					var endPath= $location.absUrl().split('tl-manager-non-eu/tl/')[1];
 					var id = endPath.split("/")[0];
+					id = id.substring(0, 36);
 				}else{ // varId not undefined -> after cloning a new draft
 					var id = varId;
 				};
